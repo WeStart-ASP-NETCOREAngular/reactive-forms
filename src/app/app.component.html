@@ -11,7 +11,7 @@
               formControlName="username"
               type="text"
             />
-            <p
+            <!-- <p
               class="text-danger"
               *ngIf="
                 !signUpForm.get('userData.username')!.valid &&
@@ -19,6 +19,12 @@
               "
             >
               Please enter valid username
+            </p> -->
+            <p class="text-danger" *ngIf="username.errors?.['required']">
+              Username field is required
+            </p>
+            <p class="text-danger" *ngIf="username.errors?.['nameIsForbidden']">
+              test is not allowed
             </p>
           </div>
 
